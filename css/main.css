@@ -1,0 +1,270 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@use './_minireset.min.css';
+html {
+  font-family: 'Kumb Sans', sans-serif;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, left bottom, from(#af67e9), to(#6565e7));
+  background: linear-gradient(to bottom, #af67e9, #6565e7);
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background: white;
+  border-radius: 20px;
+  margin: 20em auto 20em auto;
+  padding-bottom: 2em;
+}
+
+.card .bg-pattern-desktop {
+  display: none;
+}
+
+.card .box-desktop {
+  display: none;
+}
+
+.card .hero-img {
+  width: 20em;
+  height: 20em;
+  margin-bottom: -11em;
+  -webkit-transform: translateY(-11em);
+          transform: translateY(-11em);
+  z-index: 2;
+}
+
+.card .img-shadow {
+  background: #787887;
+  border-radius: 10px;
+  margin-bottom: -12em;
+  width: 12em;
+  height: 11em;
+  -webkit-transform: translateY(-12em) translateX(0.4em) rotateZ(34deg) skewX(-25deg);
+          transform: translateY(-12em) translateX(0.4em) rotateZ(34deg) skewX(-25deg);
+  opacity: .1;
+  overflow: hidden;
+}
+
+.card .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.card .content h1 {
+  font-size: 2rem;
+  font-family: 'Kumbh Sans', sans-serif;
+  margin-top: 1em;
+}
+
+.card .content .qa {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  list-style: none;
+  padding: 0;
+  width: 30em;
+}
+
+.card .content .qa li {
+  position: relative;
+  width: 80%;
+}
+
+.card .content .qa li.toggle {
+  display: block;
+  font-weight: 700;
+}
+
+.card .content .qa li.toggle:after {
+  -webkit-transform: rotate(180deg) translate(0.5em, 0.5em) !important;
+          transform: rotate(180deg) translate(0.5em, 0.5em) !important;
+}
+
+.card .content .qa li.answer {
+  display: block !important;
+}
+
+.card .content .qa li:nth-child(odd) {
+  color: #787887;
+  cursor: pointer;
+  font-size: .9rem;
+  padding-bottom: 1em;
+  margin-bottom: 1em;
+}
+
+.card .content .qa li:nth-child(odd) .question {
+  font-weight: 700;
+}
+
+.card .content .qa li:nth-child(odd):before {
+  content: '';
+  position: absolute;
+  background-color: #e7e7e9;
+  width: 95%;
+  height: 1px;
+  top: 0;
+  left: 0;
+  -webkit-transform: translateY(2em);
+          transform: translateY(2em);
+}
+
+.card .content .qa li:nth-child(odd):after {
+  background: transparent url("../images/icon-arrow-down.svg") no-repeat;
+  content: ' ';
+  display: block;
+  float: right;
+  width: 1.5em;
+  height: 1em;
+  position: relative;
+}
+
+.card .content .qa li:nth-child(even) {
+  display: none;
+  color: #787887;
+  font-size: .8rem;
+  line-height: 1.8;
+  padding-bottom: 1em;
+}
+
+.desktop-img {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #f47c57;
+}
+
+footer .attribution a {
+  color: purple;
+}
+
+@media only screen and (min-width: 1000px) {
+  .card {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .card .hero-img {
+    display: none;
+  }
+  .card .desktop-img {
+    width: 30em;
+    height: 25em;
+    display: block;
+    -webkit-transform: translateX(-5em);
+            transform: translateX(-5em);
+    z-index: 2;
+  }
+  .card .bg-pattern-desktop {
+    width: 40em;
+    height: 40em;
+    display: block;
+    position: absolute;
+    -webkit-transform: translateX(-15em);
+            transform: translateX(-15em);
+  }
+  .card .box-desktop {
+    width: 10em;
+    height: 10em;
+    display: block;
+    -webkit-transform: translateX(-5em) translateY(3em);
+            transform: translateX(-5em) translateY(3em);
+    position: absolute;
+    z-index: 2;
+  }
+  .card .img-shadow {
+    display: none;
+    position: absolute;
+  }
+  .card .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    font-size: 1.4rem;
+  }
+  .card .content h1 {
+    font-size: 3rem;
+    margin-left: 1em;
+  }
+  .card .content .qa {
+    width: 22em;
+  }
+  .card .content .qa li:nth-child(odd) {
+    font-size: 1.2rem;
+  }
+  .card .content .qa li:nth-child(odd) .question {
+    font-size: .5rem;
+  }
+  .card .content .qa li:nth-child(even) {
+    font-size: 1.2rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

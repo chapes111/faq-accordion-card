@@ -1,0 +1,262 @@
+@use './_minireset.min.css';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+// text
+$v-dark-desat-blue: hsl(238, 29%, 16%);
+$soft-red: hsl(14, 88%, 65%);
+// gradient
+$soft-violet: hsl(273, 75%, 66%);
+$soft-blue: hsl(240, 73%, 65%);
+// neutral
+// text
+$v-dark-grayish-blue: hsl(237, 12%, 33%);
+$dark-grayish-blue: hsl(240, 6%, 50%);
+// dividers
+$lt-grayish-blue: hsl(240, 5%, 91%);
+
+html {
+  font-family: 'Kumb Sans', sans-serif;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+body {
+  background: linear-gradient(to bottom, $soft-violet, $soft-blue);
+  font-size: 12px;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+
+  width: 100vw;
+  height: 100vh;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+
+  background: white;
+  border-radius: 20px;
+  margin: 20em auto 20em auto;
+  padding-bottom: 2em;
+
+  .bg-pattern-desktop {
+    display: none;
+  }
+
+  .box-desktop {
+    display: none;
+  }
+
+  .hero-img {
+    width: 20em;
+    height: 20em;
+
+    margin-bottom: -11em;
+    transform: translateY(-11em);
+    z-index: 2;
+  }
+
+  .img-shadow {
+    background: $dark-grayish-blue;
+    border-radius: 10px;
+    margin-bottom: -12em;
+
+    width: 12em;
+    height: 11em;
+
+    transform: translateY(-12em)
+               translateX(.4em)
+               rotateZ(34deg)
+               skewX(-25deg)
+               ;
+    opacity: .1;
+    overflow: hidden;
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    h1 {
+      font-size: 2rem;
+      font-family: 'Kumbh Sans', sans-serif;
+      margin-top: 1em;
+    }
+
+    .qa {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      list-style: none;
+      padding: 0;
+      width: 30em;
+
+
+      li {
+        position: relative;
+        width: 80%;
+      }
+
+      li.toggle {
+        display: block;
+        font-weight: 700;
+
+        &:after {
+          transform: rotate(180deg) translate(.5em, .5em) !important;
+        }
+      }
+
+      li.answer {
+        display: block !important;
+      }
+
+      // questions
+      li:nth-child(odd) {
+        color: $dark-grayish-blue;
+        cursor: pointer;
+        font-size: .9rem;
+        padding-bottom: 1em;
+        margin-bottom: 1em;
+
+        .question {
+          font-weight: 700;
+        }
+
+        &:before {
+          content: '';
+          position: absolute;
+          background-color: $lt-grayish-blue;
+          width: 95%;
+          height: 1px;
+          top: 0;
+          left: 0;
+          transform: translateY(2em);
+        }
+
+        &:after {
+          background: transparent url('../images/icon-arrow-down.svg') no-repeat;
+          content: ' ';
+          display: block;
+          float: right;
+          width: 1.5em;
+          height: 1em;
+          position: relative;
+        }
+      }
+
+      li:nth-child(even) {
+        display: none;
+        color: $dark-grayish-blue;
+        font-size: .8rem;
+        line-height: 1.8;
+        padding-bottom: 1em;
+      }
+    }
+
+
+  }
+
+}
+
+.desktop-img {
+  display: none;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+
+  background: $soft-red;
+
+  .attribution a { color: purple; }
+}
+
+@media only screen and (min-width: 1000px) {
+  .card {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+
+    .hero-img {
+      display: none;
+    }
+
+    .desktop-img {
+      width: 30em;
+      height: 25em;
+
+      display: block;
+      transform: translateX(-5em);
+
+      z-index: 2;
+    }
+
+    .bg-pattern-desktop {
+      width: 40em;
+      height: 40em;
+
+      display: block;
+      position: absolute;
+
+      transform: translateX(-15em);
+    }
+
+    .box-desktop {
+      width: 10em;
+      height: 10em;
+      display: block;
+      transform: translateX(-5em)
+                 translateY(3em);
+      position: absolute;
+      z-index: 2;
+    }
+
+    .img-shadow {
+      display: none;
+
+      position: absolute;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: flex-start;
+
+      font-size: 1.4rem;
+
+      h1 {
+        font-size: 3rem;
+        margin-left: 1em;
+      }
+
+      .qa {
+        width: 22em;
+
+        li:nth-child(odd) {
+          font-size: 1.2rem;
+
+          .question {
+            font-size: .5rem;
+          }
+        }
+
+        li:nth-child(even) {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
